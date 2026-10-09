@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Base ground line -->
+  <rect x="6" y="55" width="52" height="3" rx="1.5" fill="#1b2340" />
+
+  <!-- Main Central / Left Tower -->
+  <rect x="12" y="10" width="22" height="45" rx="3" fill="#1b2340" />
+
+  <!-- Secondary Right Tower -->
+  <rect x="34" y="22" width="18" height="33" rx="3" fill="#2c3654" />
+
+  <!-- Tower Antenna / Spire -->
+  <rect x="21.5" y="4" width="3" height="6" rx="1.5" fill="#1b2340" />
+
+  <!-- Windows on Main Tower (Left column) -->
+  <rect x="16" y="16" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="16" y="24" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="16" y="32" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="16" y="40" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+
+  <!-- Windows on Main Tower (Right column) -->
+  <rect x="25" y="16" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="25" y="24" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="25" y="32" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+  <rect x="25" y="40" width="5" height="4.5" rx="1" fill="#ffffff" fill-opacity="0.9" />
+
+  <!-- Windows on Secondary Tower -->
+  <rect x="38" y="27" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+  <rect x="44.5" y="27" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+
+  <rect x="38" y="34" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+  <rect x="44.5" y="34" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+
+  <rect x="38" y="41" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+  <rect x="44.5" y="41" width="4.5" height="4" rx="1" fill="#ffffff" fill-opacity="0.85" />
+
+  <!-- Main Entrance / Portal -->
+  <path d="M19 55V49C19 47.8954 19.8954 47 21 47H25C26.1046 47 27 47.8954 27 49V55H19Z" fill="#ffffff" />
+</svg>

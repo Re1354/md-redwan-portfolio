@@ -1,329 +1,422 @@
-export type SkillGroup = {
-  title: string;
-  note: string;
-  tone: 'accent' | 'ink';
-  items: string[];
-};
-
-export type Project = {
-  id: string;
-  name: string;
-  tagline: string;
-  year: string;
-  role: string;
-  status: 'Live' | 'In progress' | 'University Rollout';
-  images: string[];
-  stack: string[];
-  summary: string;
-  highlights: string[];
-  metrics: {label: string;value: string;}[];
-  liveUrl?: string;
-  liveLabel?: string;
-  repoUrl?: string;
-};
+import type {
+  Achievement,
+  Capability,
+  ExpertiseGroup,
+  FocusArea,
+  NavItem,
+  Project
+} from
+  '../types/portfolio';
 
 export const profile = {
   name: 'Md. Redwan',
-  firstName: 'Md.',
-  lastName: 'Redwan',
-  role: 'Software Engineer',
-  credentials: 'B.Sc. Computer Science · Full-Stack Systems · Architecture',
+  role: 'Full-Stack Software Developer',
+  title: 'Software Engineer',
   location: 'Dhaka, Bangladesh',
   email: 'redwantahsin2002@gmail.com',
-  phone: '+880 1778-106042',
-  portrait: "/hero-portrait.png", 
-  resumeUrl: '#',
-  intro: 'I build scalable full-stack applications, robust APIs, and production-ready systems. I specialize in backend architecture, relational databases, and modern React interfaces.',
-  intro2: 'Currently focused on engineering highly reliable products and solving complex architectural tradeoffs from schema design to deployment.',
-  links: [
-    { label: 'GitHub', href: 'https://github.com/Re1354', kind: 'github' as const },
-    {
-      label: 'LinkedIn',
-      href: 'https://linkedin.com/in/md-redwan-737026284',
-      kind: 'linkedin' as const
-    },
-    {
-      label: 'Email',
-      href: 'mailto:redwantahsin2002@gmail.com',
-      kind: 'mail' as const
-    }
-  ],
-  stats: [
-    { value: '4', label: 'Production Apps' },
-    { value: '30+', label: 'APIs Designed' },
-    { value: '1,000+', label: 'Users Supported' }
-  ]
+  phone: '01778106042',
+  whatsapp: 'https://wa.me/8801778106042',
+  telegram: 'https://t.me/+8801778106042',
+  github: 'https://github.com/Re1354',
+  linkedin: 'https://linkedin.com/in/md-redwan-737026284',
+  resume: '/projects/Resume/Md_Redwan_Resume (2).pdf',
+  portrait: '/hero-portrait.png'
 };
 
-export const about = {
-  paragraphs: [
-    'I am a Software Engineer studying Computer Science & Engineering at Daffodil International University (CGPA 3.85/4.00), focused on full-stack web architecture and reliable product delivery.',
-    'I build real systems that solve tangible problems. My work includes engineering a multi-vendor campus marketplace with complex transactional states, and a university-wide admission test system serving thousands of candidates. I prioritize clean, maintainable code—whether I am structuring a relational PostgreSQL database, developing secure REST APIs, or building highly interactive dashboards with React and TanStack Query.',
-    'Beyond writing code, I focus on production readiness. I manage VPS deployments, production domain configurations, and client-side optimizations like service workers for offline caching and image compression pipelines.'
-  ],
-  facts: [
-    { label: 'Focus', value: 'Full-Stack Web Engineering' },
-    { label: 'Architecture', value: 'REST APIs, RBAC, Relational DBs' },
-    { label: 'Frontend', value: 'React, Tailwind, State Management' },
-    { label: 'Backend', value: 'Node.js, Express, Prisma, Spring Boot' }
-  ],
-  timeline: [
-    {
-      period: '2023 — Present',
-      title: 'Full-Stack Developer',
-      org: 'Admission Test Management System',
-      bullets: [
-        'Engineered React-based portals used by candidates and administrators.',
-        'Replaced a manual workflow for exam scheduling, online examinations, and result publication, processing exams for 1,000+ students.',
-        'Integrated frontend with Django REST APIs for real-time data handling.',
-        'Managed VPS deployment, domain setup, and web-server configuration.'
-      ]
-    }
-  ]
+// Text wrapped in **double asterisks** renders as bold navy emphasis.
+export const heroCopy = {
+  greeting: "Hi, I'm Md. Redwan",
+  intro:
+    'A developer based in Bangladesh, building responsive **React** applications and secure **REST APIs** with **Node.js**, **Express**, **PostgreSQL** and **MongoDB**, with authentication, role-based access and deployment.',
+  evidence:
+    'Final-year CSE student · **Daffodil International University** · Graduating December 2026 | **300+ problems solved** across Codeforces, LeetCode & BeeCrowd',
+  credentials:
+    'Final-year CSE student · **Daffodil International University** · Graduating December 2026 | **300+ problems solved** across Codeforces, LeetCode & BeeCrowd'
 };
 
-export const skillGroups: SkillGroup[] = [
+export const rotatingBadgeText = 'FULL-STACK · REACT · NODE.JS · POSTGRESQL · ';
+
+export const navItems: NavItem[] = [
+  { id: 'home', label: 'Home', primary: false },
+  { id: 'focus', label: 'Focus', primary: true },
+  { id: 'capabilities', label: 'Capabilities', primary: true },
+  { id: 'projects', label: 'Projects', primary: true },
+  { id: 'skills', label: 'Skills', primary: true },
+  { id: 'achievements', label: 'Achievements', primary: false },
+  { id: 'education', label: 'Education', primary: false },
+  { id: 'contact', label: 'Contact', primary: false }];
+
+
+export const focusAreas: FocusArea[] = [
+  { index: '01', title: 'Full-Stack Development', items: ['React', 'Node.js', 'Express', 'REST APIs'] },
+  { index: '02', title: 'Backend & Data', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Prisma'] },
+  { index: '03', title: 'Production Systems', items: ['Authentication', 'RBAC', 'PWA', 'Deployment'] }];
+
+
+export const capabilities: Capability[] = [
   {
-    title: 'Frontend Engineering',
-    note: 'Interactive, responsive, accessible',
-    tone: 'accent',
-    items: [
-      'React, Context API, TanStack Query',
-      'JavaScript (ES6+), HTML5, CSS3',
-      'Tailwind CSS, Shadcn UI',
-      'Recharts for data visualization',
-      'Progressive Web Apps (Workbox)'
-    ]
+    index: '01',
+    title: '30+ REST APIs',
+    evidence: 'Designed and built **30+ REST APIs** with **Node.js, Express, and Prisma ORM** on **PostgreSQL**.',
+    sources: ['CampusCart']
   },
   {
-    title: 'Backend & Architecture',
-    note: 'Secure, scalable, robust APIs',
-    tone: 'ink',
-    items: [
-      'Node.js & Express.js',
-      'RESTful API architecture',
-      'JWT Authentication & OAuth',
-      'Role-Based Access Control (RBAC)',
-      'Prisma ORM & Data modeling',
-      'Spring Boot (Java)'
-    ]
+    index: '02',
+    title: '~1,000 Students Supported',
+    evidence: 'Admission exams run digitally for **nearly 1,000 students** in the latest cycle.',
+    sources: ['Admission Test System']
   },
   {
-    title: 'Database Systems',
-    note: 'Relational and NoSQL',
-    tone: 'ink',
-    items: [
-      'PostgreSQL',
-      'MongoDB',
-      'MySQL',
-      'Complex joins & aggregations',
-      'Schema design & normalization'
-    ]
+    index: '03',
+    title: 'Role-Based Access Control',
+    evidence:
+      '**Buyer, Vendor, and Admin** portals; **Admin, Rider, and User** roles; **JWT-secured** tenant access.',
+    sources: ['CampusCart', 'ZapShift', 'Building Management']
   },
   {
-    title: 'Cloud, Tools & Services',
-    note: 'Deployment & integrations',
-    tone: 'ink',
-    items: [
-      'Vercel & VPS Deployment',
-      'Git, GitHub, CI/CD workflows',
-      'Firebase (Auth, Cloud Messaging)',
-      'Stripe Payment Gateway integration',
-      'Cloudinary media pipelines',
-      'Postman API testing'
-    ]
+    index: '04',
+    title: 'Progressive Web Apps',
+    evidence: '**Workbox service workers** for **offline caching**, with client-side image compression.',
+    sources: ['CampusCart']
+  },
+  {
+    index: '05',
+    title: 'Payment & Service Integrations',
+    evidence:
+      '**Stripe** payments, **Firebase Authentication**, **Firebase Cloud Messaging**, and **Cloudinary** media.',
+    sources: ['ZapShift', 'CampusCart']
+  },
+  {
+    index: '06',
+    title: 'Production Deployment',
+    evidence: '**VPS deployment**, domain and web-server configuration, **custom domains**, and **Vercel**.',
+    sources: ['Admission Test System', 'CampusCart', 'ZapShift']
   }
-];
-
-export const coreLanguages = [
-  { name: 'JavaScript / TS', note: 'ES6+ · primary stack' },
-  { name: 'Java', note: 'OOP · Spring Boot' },
-  { name: 'SQL', note: 'PostgreSQL, MySQL' },
-  { name: 'C / C++', note: 'DSA & fundamentals' }
-];
-
-export const coreFrameworks = [
-  {
-    name: 'React',
-    role: 'Frontend UI',
-    mark: 'R',
-    usedIn: 'CampusCart · ZapShift · Building Management'
-  },
-  {
-    name: 'Node.js',
-    role: 'Backend Runtime',
-    mark: 'N',
-    usedIn: 'Developed 30+ REST APIs, Stripe Integrations'
-  },
-  {
-    name: 'Express.js',
-    role: 'API Layer',
-    mark: 'E',
-    usedIn: 'Routing, middleware, JWT Auth across projects'
-  },
-  {
-    name: 'Prisma ORM',
-    role: 'Data Access',
-    mark: 'P',
-    usedIn: 'PostgreSQL schema modeling and queries'
-  }
-];
-
-export const supportingTools = [
-  'TanStack Query',
-  'Tailwind CSS',
-  'Shadcn UI',
-  'Firebase',
-  'Stripe',
-  'Cloudinary',
-  'Postman',
-  'Git / GitHub',
-  'Vercel'
-];
-
-export const coursework = [
-  'Data Structures & Algorithms',
-  'Object-Oriented Programming',
-  'Databases',
-  'Operating Systems',
-  'Computer Networks',
-  'Software Engineering',
-  'Artificial Intelligence'
 ];
 
 export const projects: Project[] = [
   {
-    id: 'campuscart',
-    name: 'CampusCart',
-    tagline: 'Multi-vendor campus marketplace',
-    year: '2024',
-    role: 'Full-Stack Engineer',
-    status: 'Live',
-    images: ["/reference-images/image2.png"],
-    stack: ['React', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Firebase', 'Workbox'],
-    summary: 'A live multi-vendor e-commerce and peer-to-peer marketplace for the Daffodil campus community. Handles end-to-end purchasing, vendor management, and classifieds.',
-    highlights: [
-      'Built three role-based portals (Buyer, Vendor, Admin) supporting product catalog, cart/checkout, cash-on-delivery, and classifieds.',
-      'Developed 30+ REST APIs with Node.js, Express, and Prisma ORM on PostgreSQL, implementing secure JWT authentication and RBAC.',
-      'Engineered transactional order-state transitions and multi-stage order tracking.',
-      'Integrated Firebase Cloud Messaging for cross-device push notifications on order events.',
-      'Implemented a Progressive Web App (PWA) with Workbox service workers for offline caching.',
-      'Automated Cloudinary media uploads with client-side image compression and deployed on a custom domain.'
+    id: 'admission-system',
+    slug: 'admission-system',
+    monogram: 'AT',
+    index: '01',
+    title: 'Admission Test Management System',
+    tagline: 'Digital exam platform',
+    year: '2025 – Present (In Use)',
+    role: 'Frontend Developer',
+    logo: '/projects/admission-system/logo.png',
+    summary:
+      'A digital platform replacing the manual admission-examination process of the CSE Department at Daffodil International University, facilitating admission exams for nearly 1,000 students in the latest cycle.',
+    contributionNote:
+      'My contribution: the React candidate and administrative portals, integration with the Django REST API, and assisting with production deployment.',
+    problem:
+      'The department ran admission examinations through a manual process. The platform replaced it with a digital workflow for exam scheduling, candidate management, online examinations, and result publication.',
+    implemented: [
+      'Developed the **React candidate and administrative portals**',
+      'Integrated the frontend with **Django REST APIs** for real-time data handling',
+      'Assisted with **VPS deployment**, production domain setup, and web-server configuration'
     ],
-    metrics: [
-      { label: 'APIs', value: '30+' },
-      { label: 'DB', value: 'PostgreSQL' },
-      { label: 'Stack', value: 'Node/React' }
+    stack: ['React', 'Django REST API', 'Git', 'GitHub', 'VPS'],
+    featured: true,
+    images: [
+      {
+        src: '/projects/admission-system/poster.jpg',
+        alt: 'Admission Test Management System platform overview and examination workflow poster',
+        caption: 'Platform overview, candidate examination workflow, and admin analytics dashboard'
+      }
     ],
-    liveUrl: '#',
-    liveLabel: 'Live Site',
-    repoUrl: 'https://github.com/Re1354'
+    diagram: {
+      caption: '',
+      layers: []
+    },
+    links: []
   },
   {
-    id: 'admission-system',
-    name: 'Admission Test System',
-    tagline: 'Digital exam platform',
-    year: '2024',
-    role: 'Frontend Developer',
-    status: 'University Rollout',
-    images: ["/reference-images/image3.png"],
-    stack: ['React', 'Django REST', 'VPS', 'Git'],
-    summary: 'A digital platform replacing the manual admission-examination process of the CSE Department, facilitating admission exams for nearly 1,000 students in the latest cycle.',
-    highlights: [
-      'Developed and maintained the React-based administrative and candidate portals used by students and exam administrators.',
-      'Integrated the frontend with Django REST APIs for real-time data handling and dynamic content rendering.',
-      'Replaced a manual workflow for exam scheduling, candidate management, online examinations, and result publication.',
-      'Assisted with VPS deployment, production domain setup, and web-server configuration.'
+    id: 'campuscart',
+    slug: 'campuscart',
+    monogram: 'CC',
+    index: '02',
+    title: 'CampusCart',
+    tagline: 'Multi-vendor campus marketplace',
+    year: '2026',
+    role: 'Full-Stack Developer',
+    logo: '/projects/campuscart/logo.png',
+    summary:
+      'A live multi-vendor e-commerce and peer-to-peer marketplace for the Daffodil campus community. Handles end-to-end purchasing, vendor management, and classifieds.',
+    problem:
+      'Gives the Daffodil campus community one platform for buying from vendors, managing vendor stores, and trading through peer-to-peer classifieds — from catalog to checkout to order tracking.',
+    implemented: [
+      'Built **30+ REST APIs** with Node.js, Express, and Prisma on PostgreSQL',
+      'Implemented **JWT authentication and RBAC**',
+      'Developed **Buyer, Vendor, and Admin portals**',
+      'Built **transactional order-state transitions** and multi-stage order tracking',
+      'Integrated **Firebase Cloud Messaging** push notifications',
+      'Added **PWA offline caching** with Workbox service workers',
+      'Automated **Cloudinary uploads** with client-side image compression',
+      'Configured deployment on a **custom domain**'
     ],
-    metrics: [
-      { label: 'Users', value: '~1,000' },
-      { label: 'Impact', value: 'Digitized' },
-      { label: 'Role', value: 'Frontend/Ops' }
+    stack: ['React', 'Node.js', 'Express.js', 'Prisma', 'PostgreSQL', 'JWT', 'RBAC', 'Firebase', 'Workbox', 'Cloudinary'],
+    featured: true,
+    images: [
+      {
+        src: '/projects/campuscart/campuscart-1.png',
+        alt: 'CampusCart marketplace landing page and student startups showcase',
+        caption: 'Marketplace homepage with student startup promotions and mobile app preview'
+      },
+      {
+        src: '/projects/campuscart/campuscart-2.png',
+        alt: 'CampusCart shop by category and top selling products grid',
+        caption: 'Category navigation and top-selling products catalog'
+      },
+      {
+        src: '/projects/campuscart/campuscart-3.png',
+        alt: 'CampusCart category filter and product listing view',
+        caption: 'Indoor Plants category view with dynamic price and category filters'
+      },
+      {
+        src: '/projects/campuscart/campuscart-4.png',
+        alt: 'CampusCart campus delivery checkout and payment review',
+        caption: 'Campus dorm delivery checkout with Cash on Delivery'
+      }
+    ],
+    diagram: {
+      caption: 'System overview — three role-based portals on a single REST API.',
+      layers: [
+        {
+          label: 'Clients',
+          nodes: [
+            { name: 'Buyer portal', detail: 'Catalog · cart · checkout' },
+            { name: 'Vendor portal', detail: 'Products · orders' },
+            { name: 'Admin portal', detail: 'Platform management' }
+          ]
+        },
+        {
+          label: 'API',
+          nodes: [
+            { name: 'REST API', detail: 'Node.js · Express · 30+ endpoints' },
+            { name: 'Auth', detail: 'JWT · RBAC' }
+          ]
+        },
+        {
+          label: 'Data & services',
+          nodes: [
+            { name: 'PostgreSQL', detail: 'via Prisma ORM' },
+            { name: 'Firebase', detail: 'Cloud Messaging' },
+            { name: 'Cloudinary', detail: 'Compressed uploads' },
+            { name: 'Workbox', detail: 'Offline cache' }
+          ]
+        }
+      ],
+      flowLabel: 'Order flow',
+      flow: ['Catalog', 'Cart', 'Checkout (COD)', 'Order tracking']
+    },
+    links: [
+      { kind: 'live', href: 'https://campuscartdiu.com' },
+      { kind: 'github', href: 'https://github.com/Re1354' }
     ]
   },
   {
     id: 'zapshift',
-    name: 'ZapShift',
+    slug: 'zapshift',
+    monogram: 'ZS',
+    index: '03',
+    title: 'ZapShift',
     tagline: 'Logistics management platform',
-    year: '2024',
-    role: 'Full-Stack Engineer',
-    status: 'Live',
-    images: ["/reference-images/image4.png"],
-    stack: ['React', 'TanStack Query', 'Node.js', 'MongoDB', 'Firebase', 'Stripe'],
-    summary: 'A comprehensive parcel booking, delivery tracking, and logistics management web application built for operational efficiency.',
-    highlights: [
-      'Implemented Firebase authentication (OAuth/email), complex RBAC (Admin, Rider, User), and real-time parcel status tracking.',
-      'Built interactive delivery-analytics dashboards with React, Recharts, TanStack Query, and Tailwind CSS.',
-      'Developed secure REST APIs with Node.js, Express, and MongoDB.',
-      'Integrated Stripe payment processing for seamless transactions and deployed on Vercel.'
+    year: '2026',
+    role: 'Full-Stack Developer',
+    logo: '/projects/ZapShift/logo.png',
+    summary:
+      'A parcel booking, delivery tracking, and logistics management web application built for operational efficiency.',
+    problem:
+      'Brings parcel booking, payment, delivery tracking, and delivery analytics into a single application shared by admins, riders, and users.',
+    implemented: [
+      'Implemented **Firebase authentication** (OAuth / email)',
+      'Implemented **RBAC** for Admin, Rider, and User roles',
+      'Built **real-time parcel status tracking**',
+      'Built **delivery-analytics dashboards** with Recharts and TanStack Query',
+      'Developed **REST APIs** with Node.js, Express, and MongoDB',
+      'Integrated **Stripe payment** processing',
+      'Configured deployment on **Vercel**'
     ],
-    metrics: [
-      { label: 'Auth', value: 'Firebase' },
-      { label: 'Payments', value: 'Stripe' },
-      { label: 'Dashboards', value: 'Recharts' }
+    stack: ['React', 'TanStack Query', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Stripe', 'Recharts'],
+    featured: false,
+    images: [
+      {
+        src: '/projects/ZapShift/image1.png',
+        alt: 'ZapShift parcel delivery platform overview showing User, Rider, and Admin ecosystem',
+        caption: 'Platform overview highlighting multi-role ecosystem, real-time tracking, and automated rider assignment'
+      },
+      {
+        src: '/projects/ZapShift/image2.png',
+        alt: 'ZapShift landing page hero with 30-minute doorstep delivery guarantee and service navigation',
+        caption: 'Landing page featuring fast courier service proposition, parcel booking, and rider onboarding'
+      },
+      {
+        src: '/projects/ZapShift/image3before3.png',
+        alt: 'ZapShift nationwide delivery coverage map across 64 districts in Bangladesh',
+        caption: 'Interactive coverage map displaying service presence across all 64 districts nationwide'
+      },
+      {
+        src: '/projects/ZapShift/image3.png',
+        alt: 'ZapShift parcel dispatch booking form with sender and receiver specifications',
+        caption: 'Streamlined parcel dispatch form with document categorization and automated pricing'
+      },
+      {
+        src: '/projects/ZapShift/image4.png',
+        alt: 'ZapShift live consignment tracking interface with chronological lifecycle status',
+        caption: 'Live parcel tracking interface with real-time progress steps from pickup to delivery'
+      },
+      {
+        src: '/projects/ZapShift/image5.png',
+        alt: 'ZapShift user analytics dashboard displaying monthly booking trends and status distribution',
+        caption: 'Customer portal showing booking history, active shipments, and delivery metrics'
+      },
+      {
+        src: '/projects/ZapShift/image6.png',
+        alt: 'ZapShift shipment pipeline lifecycle breakdown and recent bookings table',
+        caption: 'Shipment pipeline overview tracking live parcel stages and recent consignment records'
+      },
+      {
+        src: '/projects/ZapShift/image7.png',
+        alt: 'ZapShift Stripe payment transaction history and receipt ledger',
+        caption: 'Secure Stripe payment transaction history with itemized invoice and payment status'
+      },
+      {
+        src: '/projects/ZapShift/image8.png',
+        alt: 'ZapShift admin portal for reviewing and approving courier rider applications',
+        caption: 'Administrative approval system for vetting rider applications, licenses, and fleet availability'
+      },
+      {
+        src: '/projects/ZapShift/image9.png',
+        alt: 'ZapShift administrative user profile and access control shortcuts',
+        caption: 'Admin account profile with role verification and system management shortcuts'
+      },
+      {
+        src: '/projects/ZapShift/image10.png',
+        alt: 'ZapShift admin delivery status analytics, volume charts, and pipeline distribution',
+        caption: 'Comprehensive logistics analytics dashboard with delivery volume charts and stage breakdown'
+      }
     ],
-    liveUrl: '#',
-    liveLabel: 'Live Demo',
-    repoUrl: 'https://github.com/Re1354'
+    diagram: {
+      caption: 'Three roles sharing one tracking pipeline.',
+      layers: [
+        { label: 'Roles', nodes: [{ name: 'Admin' }, { name: 'Rider' }, { name: 'User' }] },
+        {
+          label: 'Services',
+          nodes: [
+            { name: 'Express API', detail: 'Node.js' },
+            { name: 'Firebase Auth', detail: 'OAuth · email' },
+            { name: 'Stripe', detail: 'Payments' }
+          ]
+        },
+        { label: 'Data', nodes: [{ name: 'MongoDB', detail: 'Parcels · status' }] }
+      ]
+    },
+    links: [
+      { kind: 'live', href: 'https://zapshift-client.vercel.app/' },
+      {
+        kind: 'github',
+        label: 'Client Repo',
+        description: 'React · Tailwind · Firebase',
+        href: 'https://github.com/Re1354/zapshift-client'
+      },
+      {
+        kind: 'github',
+        label: 'Server Repo',
+        description: 'Node.js · Express · MongoDB',
+        href: 'https://github.com/Re1354/zapshift-server'
+      },
+      { kind: 'video', href: 'https://youtu.be/ub8DYkf8gBY?si=Io4s1iyKjIvyOFOF' }
+    ]
   },
   {
     id: 'building-management',
-    name: 'Building Management System',
+    slug: 'building-management',
+    monogram: 'BM',
+    index: '04',
+    title: 'Building Management System',
     tagline: 'Tenant & rent administration',
-    year: '2023',
-    role: 'Full-Stack Engineer',
-    status: 'Live',
-    images: ["/reference-images/image5.png"],
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Recharts'],
-    summary: 'A tenant and rent management web application designed to streamline property administration and financial tracking.',
-    highlights: [
-      'Implemented JWT authentication, RBAC, and secure tenant CRUD operations.',
-      'Engineered automated rent tracking and financial reporting systems.',
-      'Built visual financial-reporting dashboards with React, Recharts, and Tailwind CSS.',
-      'Developed robust REST APIs with Node.js and Express, backed by MongoDB.'
+    year: '2025',
+    role: 'Full-Stack Developer',
+    logo: '/projects/building-management/logo.svg',
+    summary:
+      'A tenant and rent management web application designed to streamline property administration and financial tracking.',
+    problem:
+      'Streamlines property administration by keeping tenant records, rent tracking, and financial reporting in one secure application.',
+    implemented: [
+      'Implemented **JWT authentication and RBAC**',
+      'Built secure **tenant CRUD** operations',
+      'Built **automated rent tracking** and financial reporting',
+      'Built **financial-reporting dashboards** with Recharts and Tailwind CSS',
+      'Developed **REST APIs** with Node.js, Express, and MongoDB'
     ],
-    metrics: [
-      { label: 'Auth', value: 'JWT' },
-      { label: 'Data', value: 'MongoDB' },
-      { label: 'UI', value: 'Tailwind' }
-    ],
-    liveUrl: '#',
-    liveLabel: 'Live Demo',
-    repoUrl: 'https://github.com/Re1354'
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Recharts', 'Tailwind CSS'],
+    featured: false,
+    diagram: {
+      caption: 'Access control in front of tenant and finance modules.',
+      layers: [
+        { label: 'Access', nodes: [{ name: 'JWT auth' }, { name: 'RBAC' }] },
+        { label: 'Modules', nodes: [{ name: 'Tenant CRUD' }, { name: 'Rent tracking' }, { name: 'Financial reports' }] },
+        { label: 'Data', nodes: [{ name: 'Express API', detail: 'Node.js' }, { name: 'MongoDB' }] }
+      ]
+    },
+    links: []
   }
 ];
 
-export const resume = {
-  summary: 'A snapshot of my education, academic recognition, and commitment to continuous problem solving.',
-  education: [
-    {
-      period: '2023 — Dec 2026 (Expected)',
-      title: 'B.Sc. in Computer Science & Engineering',
-      org: 'Daffodil International University',
-      detail: 'Current CGPA 3.85 / 4.00. Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming (Java), Databases, Operating Systems, Computer Networks, Software Engineering, Artificial Intelligence.'
-    }
-  ],
-  awards: [
-    {
-      year: '2024',
-      title: 'Java Spring Boot Course Certificate — completed full-stack Spring Boot training with hands-on project work.'
-    },
-    {
-      year: '2023',
-      title: '1st Place, Java course team project — Daffodil International University.'
-    }
-  ],
-  problemSolving: [
-    'Solved 300+ algorithmic problems on Codeforces and LeetCode.',
-    'Daily practice in Data Structures and Algorithms to maintain strong computational fundamentals.'
-  ]
+export const expertise: ExpertiseGroup[] = [
+  {
+    category: 'Frontend',
+    items: ['JavaScript', 'React', 'Tailwind CSS', 'HTML5', 'CSS3', 'TanStack Query', 'Recharts', 'PWA / Workbox']
+  },
+  {
+    category: 'Backend',
+    items: ['Node.js', 'Express.js', 'REST APIs', 'Prisma', 'JWT Authentication', 'RBAC', 'Java', 'Spring Boot']
+  },
+  { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'MySQL'] },
+  {
+    category: 'Tools & Services',
+    items: ['Git', 'GitHub', 'Postman', 'Firebase', 'Stripe', 'Cloudinary', 'Vercel']
+  }
+];
+
+export const problemSolving = {
+  value: '300',
+  label: 'problems solved on **Codeforces** and **LeetCode**',
+  note: 'Daily practice in data structures and algorithms to keep fundamentals sharp.'
 };
 
-export const navItems = [
-  { label: 'Engineering', href: '#engineering' },
-  { label: 'Work', href: '#projects' },
-  { label: 'Expertise', href: '#skills' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Resume', href: '#education' },
-  { label: 'Contact', href: '#contact' }
+export const achievements: Achievement[] = [
+  {
+    year: '2023',
+    title: '1st Place — Java course team project',
+    detail: 'Daffodil International University'
+  },
+  {
+    year: '2024',
+    title: 'Java Spring Boot Course Certificate',
+    detail: 'Completed full-stack Spring Boot training with hands-on project work.'
+  }
 ];
+
+export const education = {
+  institution: 'Daffodil International University',
+  monogram: 'DIU',
+  logo: '/projects/admission-system/logo.png',
+  degree: 'B.Sc. in Computer Science and Engineering',
+  period: '2023 — Dec 2026 (Expected)',
+  cgpa: '3.85',
+  scale: '4.00',
+  coursework: [
+    'Data Structures & Algorithms',
+    'Object-Oriented Programming (Java)',
+    'Databases',
+    'Operating Systems',
+    'Computer Networks',
+    'Software Engineering',
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Computer Vision',
+    'Engineering Economics'
+  ]
+};
