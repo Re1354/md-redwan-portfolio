@@ -39,7 +39,7 @@ body {
 }
 @layer components {
   .site-container {
-    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-10 xl:max-w-[1320px] xl:px-12 2xl:max-w-[1480px] 2xl:px-14;
+    @apply mx-auto w-full max-w-[1140px] px-5 sm:px-8 md:px-10 lg:max-w-[1200px] lg:px-12 xl:max-w-[1260px] xl:px-14 2xl:max-w-[1340px] 2xl:px-16;
   }
 }
 html,

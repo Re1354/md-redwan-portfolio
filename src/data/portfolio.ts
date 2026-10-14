@@ -19,7 +19,7 @@ export const profile = {
   telegram: 'https://t.me/+8801778106042',
   github: 'https://github.com/Re1354',
   linkedin: 'https://linkedin.com/in/md-redwan-737026284',
-  resume: '/projects/Resume/Md_Redwan_Resume (2).pdf',
+  resume: '/projects/Resume/Redwan_Resume (2).pdf',
   portrait: '/hero-portrait.png'
 };
 

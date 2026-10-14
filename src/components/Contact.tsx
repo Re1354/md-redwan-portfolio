@@ -74,7 +74,7 @@ export function Contact() {
                   <SocialButtons tone="dark" />
                   <a
                     href={profile.resume}
-                    download={hasResume ? 'Md_Redwan_Resume.pdf' : undefined}
+                    download={hasResume ? 'Redwan_Resume.pdf' : undefined}
                     className="group inline-flex h-11 items-center gap-2 rounded-xl bg-bone px-4 text-[14px] font-semibold text-ink transition-colors duration-150 ease-out hover:bg-white">
 
                     Resume

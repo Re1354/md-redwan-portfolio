@@ -54,7 +54,7 @@ export function Hero() {
 
             <div className="flex w-full flex-col gap-3 min-[420px]:w-auto min-[420px]:flex-row min-[420px]:justify-center">
               <ActionLink href="#projects">View Projects</ActionLink>
-              <ActionLink href={profile.resume} variant="secondary" icon="down" download={hasResume ? 'Md_Redwan_Resume.pdf' : undefined}>
+              <ActionLink href={profile.resume} variant="secondary" icon="down" download={hasResume ? 'Redwan_Resume.pdf' : undefined}>
                 Download Resume
               </ActionLink>
             </div>
