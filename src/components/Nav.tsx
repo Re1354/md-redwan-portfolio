@@ -97,7 +97,7 @@ export function Nav() {
           {open &&
           <motion.div
             id="mobile-menu"
-            className="absolute inset-x-5 top-full mt-2 max-h-[calc(100dvh-110px)] overflow-y-auto overscroll-contain rounded-2xl border border-line bg-white p-2 shadow-soft-lg sm:inset-x-8 md:inset-x-10 lg:hidden"
+            className="absolute inset-x-5 top-full mt-2 max-h-[calc(100dvh-110px)] overflow-y-auto overscroll-contain rounded-2xl border border-line bg-white p-2 shadow-soft-lg sm:inset-x-8 lg:hidden"
             initial={{ opacity: 0, scale: reduce ? 1 : 0.97, y: reduce ? 0 : -6 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: reduce ? 1 : 0.97, y: reduce ? 0 : -6 }}
